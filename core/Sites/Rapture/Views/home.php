@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
-        <title>UI KIT</title>
+        <title><?php echo $title; ?></title>
 
         <link href="<?php asset('css/bootstrap.min.css');?>" rel="stylesheet">
         <link href="<?php asset('css/bxslider.css');?>" rel="stylesheet">
