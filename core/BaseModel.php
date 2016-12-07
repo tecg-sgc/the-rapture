@@ -40,10 +40,8 @@ class BaseModel
 
     public static function getInstance()
     {
-        if(is_null(self::$instance)){
-            $class = get_called_class();
-            self::$instance = new $class();
-        }
+        $class = get_called_class();
+        self::$instance = new $class();
         return self::$instance;
     }
 
