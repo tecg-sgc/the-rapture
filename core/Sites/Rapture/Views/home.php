@@ -25,7 +25,7 @@
                 <div class="right">
                     <a class="header14_icon notification">Notifications</a>
                     <a class="header14_icon messages">Messages</a>
-                    <a class="header14_user"><img src="<?php asset('i/header14_user.jpg');?>" alt="" />Denis Shepovalov</a>
+                    <a class="header14_user"><img src="<?php asset('i/header14_user.jpg');?>" alt="" /><?php echo $user->firstname . ' ' . $user->lastname;?></a>
                 </div>
                 
                 <div class="mobile_socials black">
@@ -186,11 +186,12 @@
                 <h2>Today's Most <i>Popular</i> Places</h2>
                 <div class="sec1_13_text">In your destination, Rapture transforms from your travel agent to your local concierge. We make vetted recommendations for your dining and activities.</div>
                 <div class="flex">
+                <?php foreach($places as $place):?>
                     <div class="sec5_14_block">
                         <a><img src="<?php asset('i/sec5_14_img1.jpg');?>" alt="" /></a>
-                        <a class="title"><i>Royal Plaza Hotel</i></a>
-                        <div class="subtitle">Hong Kong</div>
-                        <div class="text">Centrally located in Mongkok atop the Mong Kok East MTR subway station, the luxurious Royal Plaza Hotel offers direct access to MOKO, a large shopping mall with over 200...</div>
+                        <a class="title"><i><?php echo $place->title;?></i></a>
+                        <div class="subtitle"><?php echo $place->city;?></div>
+                        <div class="text"><?php echo $place->description;?></div>
                         <div class="bottom">
                             <div class="star"></div>
                             <div class="star"></div>
@@ -201,51 +202,7 @@
                         </div>
                         <div class="clr"></div>
                     </div>
-                    <div class="sec5_14_block">
-                        <a><img src="<?php asset('i/sec5_14_img2.jpg');?>" alt="" /></a>
-                        <a class="title"><i>Hotel Quirinale</i></a>
-                        <div class="subtitle">Rome</div>
-                        <div class="text">In a 19th-century building, the Quirinale is a 10-minute walk from the Colosseum. This historic hotel is connected to Rome Opera House through a passageway in its leafy...</div>
-                        <div class="bottom">
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <a class="sec3_4_link">Book</a>
-                        </div>
-                        <div class="clr"></div>
-                    </div>
-                    <div class="sec5_14_block">
-                        <a><img src="<?php asset('i/sec5_14_img3.jpg');?>" alt="" /></a>
-                        <a class="title"><i>Row NYC</i></a>
-                        <div class="subtitle">New York</div>
-                        <div class="text">In the Theater District and within a short walk of Times Square, this hotel features a fitness center and concierge service. Rockefeller Center is a short walk away.</div>
-                        <div class="bottom">
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <a class="sec3_4_link">Book</a>
-                        </div>
-                        <div class="clr"></div>
-                    </div>
-                    <div class="sec5_14_block">
-                        <a><img src="<?php asset('i/sec5_14_img4.jpg');?>" alt="" /></a>
-                        <a class="title"><i>Baan Laimai</i></a>
-                        <div class="subtitle">Thailand</div>
-                        <div class="text">Baan Laimai Resort occupies a prime position in Patong’s shopping district, steps from popular Patong Beach. It features a large lagoon pool with pool bar, free Wi-Fi and...</div>
-                        <div class="bottom">
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <div class="star"></div>
-                            <a class="sec3_4_link">Book</a>
-                        </div>
-                        <div class="clr"></div>
-                    </div>
+                <?php endforeach;?>
                 </div>
                 <a href="#" class="sec4_5_btn blue">View All Places</a>
             </div>
